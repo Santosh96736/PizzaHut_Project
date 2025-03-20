@@ -4,33 +4,37 @@
 
 ## TABLE CONTAINT 
 1. PROJECT OVERVIEW
-2. PROJECT OBJECT
-3. DATABASAE SCHEMA
+2. PROJECT OBJECTIVE
+3. DATABASE SCHEMA
 4. SQL QUERIES
 5. KEY FINDINGS
 6. CONTACT
 
 
 ## 1. PROJECT OVERVIEW
-  *   Deep analysis of pizzaHut Database and finding usefull insights for business using MySQL.
+  *   This project involves an in-depth analysis of PizzaHut's sales database using MySQL to extract valuable business insights,
+      optimize performance, and understand customer preferences. 
 
-## 2. PROJECT OBJECT
+## 2. PROJECT OBJECTIVE
 
-  * CREATE DATABASE   : Create a Structured Database for analysis
-  * LOAD FILES        : Load files through import wizard
-  * INDEX             : Creating indexes for speeding query performance
-  * QUERY DATA        : Querying data for meaningfull business insight
-  * WINDOW FUNCTION   : Using Window Functions for Time data, Running total and Cumulative Finding
+  * Create Database: Design a structured relational database.
+  * Load Data: Import CSV files using MySQL Import Wizard.
+  * Optimize Performance: Use indexing for efficient query execution.
+  * Extract Insights: Perform complex SQL queries for business analytics.
+  * Use Window Functions: Analyze trends, running totals, and cumulative calculations.  
   
 
-## 3. DATABASE SCHEMA
-   * There are four tables in the Database    
-     | Table Name    |  Column Name                                   |  
-   * |---------------|------------------------------------------------|  
-   * | pizza_types   | pizza_type_id, name, category, ingredients     |  
-   * | orders        | order_id, date, time                           |  
-   * | pizzas        | pizza_id, pizza_type_id, size, price           |  
-   * | order_details | order_details_id, order_id, pizza_id, quantity |  
+## 3. Database Schema
+
+| Table Name      | Column Names |
+|----------------|----------------------------------------------------|
+| **pizza_types**  | `pizza_type_id`, `name`, `category`, `ingredients` |
+| **orders**       | `order_id`, `date`, `time` |
+| **pizzas**       | `pizza_id`, `pizza_type_id`, `size`, `price` |
+| **order_details**| `order_details_id`, `order_id`, `pizza_id`, `quantity` |
+
+
+
 
 ## 4. SQL QUERIES
 
@@ -177,7 +181,7 @@ LIMIT 3;
 ```
 
 ```sql
--- RETERIEVE TOP 5 MOST QUANTITY SOLD HOUR -- 
+-- RETRIEVE TOP 5 MOST QUANTITY SOLD HOUR -- 
 
 SELECT HOUR(o.time) AS hour, SUM(od.quantity) AS total_quantity
 FROM orders AS o
@@ -293,11 +297,12 @@ FROM date_data;
 ```
 
 ## 5. KEY FINDINGS
-   *  AVGERAGE PIZZA SOLD PER DAY : 138 pizza were sold per day
-   *  WHICH PIZZA SOLD MOST : The Classic Deluxe Pizza were sold most
-   *  PICK SELLING HOUR : After noon 12 o'clock
-   *  LESS SELLING SIZE : XXL were sold less than others
+   *  AVGERAGE PIZZA SOLD PER DAY : 138 pizza sold per day
+   *  MOST DEMANDED PIZZA : The Classic Deluxe Pizza
+   *  PEAK SELLING HOUR : Afternoon 12 o'clock
+   *  LESS SELLING SIZE : XXL size
    *  MOST EXPENSIVE PIZZA : The Greek Pizza
+   *  MOST CONTRIBUTE CATEGORY : Classic
 
 ## 6. CONTACT 
 
