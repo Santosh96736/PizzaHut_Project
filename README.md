@@ -297,12 +297,12 @@ FROM date_data;
 ```
 
 ## 5. KEY FINDINGS
-   *  **AVGERAGE PIZZA SOLD PER DAY:** 138 pizza sold per day
+   *  **AVERAGE PIZZA SOLD PER DAY:** 138 pizza sold per day
    *  **MOST DEMANDED PIZZA:** The Classic Deluxe Pizza
    *  **PEAK SELLING HOUR:** Afternoon 12 o'clock
    *  **LESS SELLING SIZE:** XXL size
    *  **MOST EXPENSIVE PIZZA:** The Greek Pizza
-   *  **MOST CONTRIBUTE CATEGORY:** Classic
+   *  **HIGHEST CONTRIBUTING CATEGORY:** Classic
 
 ## 6. REPOSITORY DETAILS
 
