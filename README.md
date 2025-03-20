@@ -2,13 +2,13 @@
 
 ![PizzaHut Logo](https://github.com/Santosh96736/PizzaHut_Project/blob/main/PizzaHut.png)
 
-## TABLE CONTAINT 
+## TABLE CONTENTS 
 1. PROJECT OVERVIEW
 2. PROJECT OBJECTIVE
 3. DATABASE SCHEMA
 4. SQL QUERIES
 5. KEY FINDINGS
-6. CONTACT
+6. REPOSITORY DETAILS
 
 
 ## 1. PROJECT OVERVIEW
@@ -17,21 +17,21 @@
 
 ## 2. PROJECT OBJECTIVE
 
-  * Create Database: Design a structured relational database.
-  * Load Data: Import CSV files using MySQL Import Wizard.
-  * Optimize Performance: Use indexing for efficient query execution.
-  * Extract Insights: Perform complex SQL queries for business analytics.
-  * Use Window Functions: Analyze trends, running totals, and cumulative calculations.  
+  * **Create Database:** Design a structured relational database.
+  * **Load Data:** Import CSV files using MySQL Import Wizard.
+  * **Optimize Performance:** Use indexing for efficient query execution.
+  * **Extract Insights:** Perform complex SQL queries for business analytics.
+  * **Use Window Functions:** Analyze trends, running totals, and cumulative calculations.  
   
 
 ## 3. Database Schema
 
-| Table Name      | Column Names |
-|----------------|----------------------------------------------------|
-| **pizza_types**  | `pizza_type_id`, `name`, `category`, `ingredients` |
-| **orders**       | `order_id`, `date`, `time` |
-| **pizzas**       | `pizza_id`, `pizza_type_id`, `size`, `price` |
-| **order_details**| `order_details_id`, `order_id`, `pizza_id`, `quantity` |
+> | Table Name      | Column Names |
+> |----------------|----------------------------------------------------|
+> | **pizza_types**  | `pizza_type_id`, `name`, `category`, `ingredients` |
+> | **orders**       | `order_id`, `date`, `time` |
+> | **pizzas**       | `pizza_id`, `pizza_type_id`, `size`, `price` |
+> | **order_details**| `order_details_id`, `order_id`, `pizza_id`, `quantity` |
 
 
 
@@ -297,17 +297,20 @@ FROM date_data;
 ```
 
 ## 5. KEY FINDINGS
-   *  AVGERAGE PIZZA SOLD PER DAY : 138 pizza sold per day
-   *  MOST DEMANDED PIZZA : The Classic Deluxe Pizza
-   *  PEAK SELLING HOUR : Afternoon 12 o'clock
-   *  LESS SELLING SIZE : XXL size
-   *  MOST EXPENSIVE PIZZA : The Greek Pizza
-   *  MOST CONTRIBUTE CATEGORY : Classic
+   *  **AVGERAGE PIZZA SOLD PER DAY:** 138 pizza sold per day
+   *  **MOST DEMANDED PIZZA:** The Classic Deluxe Pizza
+   *  **PEAK SELLING HOUR:** Afternoon 12 o'clock
+   *  **LESS SELLING SIZE:** XXL size
+   *  **MOST EXPENSIVE PIZZA:** The Greek Pizza
+   *  **MOST CONTRIBUTE CATEGORY:** Classic
 
-## 6. CONTACT 
+## 6. REPOSITORY DETAILS
 
-   EMAIL ADDRESS  : [santosh96736@gmail.com](santosh96736@gmail.com)  
-   GITHUB ADDRESS : [https://github.com/Santosh96736/PizzaHut_Project/edit/main/README.md](https://github.com/Santosh96736/PizzaHut_Project)  
+- **Repository Name:** PizzaHut Data Analysis  
+- **Description:** Analyzing PizzaHut sales data using MySQL to extract insights and optimize performance.  
+- **Author:** [Santosh96736](https://github.com/Santosh96736) 
+- **Mail:** [santosh96736@gmail.com](santosh96736@gmail.com)
+- **GitHub Repository:** [PizzaHut_Project](https://github.com/Santosh96736/PizzaHut_Project)  
 
 
 
