@@ -137,7 +137,7 @@ GROUP BY month
 ORDER BY revenue DESC
 LIMIT 3;
 
--- RETERIEVE TOP 5 MOST QUANTITY SOLD HOUR -- 
+-- RETRIEVE TOP 5 MOST QUANTITY SOLD HOUR -- 
 
 SELECT HOUR(o.time) AS hour, SUM(od.quantity) AS total_quantity
 FROM orders AS o
