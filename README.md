@@ -302,7 +302,7 @@ FROM date_data;
 ## 6. CONTACT 
 
    EMAIL ADDRESS  : [santosh96736@gmail.com](santosh96736@gmail.com)  
-   GITHUB ADDRESS : [santosh96736](https://github.com/Santosh96736/PizzaHut_Project/edit/main/README.md)  
+   GITHUB ADDRESS : [https://github.com/Santosh96736/PizzaHut_Project/edit/main/README.md](https://github.com/Santosh96736/PizzaHut_Project)  
 
 
 
