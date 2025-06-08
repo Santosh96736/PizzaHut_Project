@@ -3,12 +3,12 @@
 ![PizzaHut Logo](https://github.com/Santosh96736/PizzaHut_Project/blob/main/PizzaHut.png)
 
 ## TABLE CONTENTS 
-1. [PROJECT OVERVIEW](PROJECT-OVERVIEW)
-2. [PROJECT OBJECTIVE](PROJECT-OBJECTIVE)
-3. [DATABASE SCHEMA](DATABASE-SCHEMA)
-4. [SQL QUERIES](SQL-QUERIES)
-5. [KEY FINDINGS](KEY-FINDINGS)
-6. [REPOSITORY DETAILS](REPOSITORY-DETAILS)
+1. [PROJECT OVERVIEW](#-PROJECT-OVERVIEW)
+2. [PROJECT OBJECTIVE](#-PROJECT-OBJECTIVE)
+3. [DATABASE SCHEMA](#-DATABASE-SCHEMA)
+4. [SQL QUERIES](#-SQL-QUERIES)
+5. [KEY FINDINGS](#-KEY-FINDINGS)
+6. [REPOSITORY DETAILS](#-REPOSITORY-DETAILS)
 
 
 ## 1. PROJECT OVERVIEW
@@ -308,7 +308,7 @@ FROM date_data;
 
 - **Repository Name:** PizzaHut Data Analysis  
 - **Description:** Analyzing PizzaHut sales data using MySQL to extract insights and optimize performance.  
-- **Author:** [Santosh96736](https://github.com/Santosh96736) 
+- **LinkidIn:** [Santosh Kumar Sahu](https://www.linkedin.com/in/santosh-kumar-sahu-data-analyst)
 - **Mail:** [santosh96736@gmail.com](santosh96736@gmail.com)
 - **GitHub Repository:** [PizzaHut_Project](https://github.com/Santosh96736/PizzaHut_Project)  
 
