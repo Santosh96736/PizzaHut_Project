@@ -8,15 +8,16 @@
 3. [DATABASE SCHEMA](#-DATABASE-SCHEMA)
 4. [SQL QUERIES](#-SQL-QUERIES)
 5. [KEY FINDINGS](#-KEY-FINDINGS)
-6. [REPOSITORY DETAILS](#-REPOSITORY-DETAILS)
+6. [RECOMMENDATIONS & SUGGESTIONS](#-Recommendations-&-Suggestions)
+7. [REPOSITORY DETAILS](#-REPOSITORY-DETAILS)
 
 
 ## 1. PROJECT OVERVIEW
   *   This project involves an in-depth analysis of PizzaHut's sales database using MySQL to extract valuable business insights,
-      optimize performance, and understand customer preferences. 
+      optimize performance, and understand customer preferences.  
+      Download the Dataset : [Pizza Place Sales](https://www.kaggle.com/datasets/mysarahmadbhat/pizza-place-sales?select=pizzas.csv)
 
 ## 2. PROJECT OBJECTIVE
-
   * **Create Database:** Design a structured relational database.
   * **Load Data:** Import CSV files using MySQL Import Wizard.
   * **Optimize Performance:** Use indexing for efficient query execution.
@@ -32,104 +33,28 @@
 > | **orders**       | `order_id`, `date`, `time` |
 > | **pizzas**       | `pizza_id`, `pizza_type_id`, `size`, `price` |
 > | **order_details**| `order_details_id`, `order_id`, `pizza_id`, `quantity` |
+  Download the Schema : [PizzaHut Schema](https://github.com/Santosh96736/PizzaHut_Project/blob/main/PizzaHut_Schema_SQL.sql)
 
 
 
 
 ## 4. SQL QUERIES
-
-```sql
--- CREATING DATABASE
-
-CREATE DATABASE IF NOT EXISTS PizzaHut;
-```
-
-```sql
--- USING DATABASE
-
-USE PizzaHut;
-```
-
-
-```sql
--- CREATING TABLES AND IMPORTING DATA
-
-CREATE TABLE pizza_types( 
-pizza_type_id VARCHAR(15), 
-name VARCHAR(50),  
-category VARCHAR(10),  
-ingredients VARCHAR(100), 
-PRIMARY KEY (pizza_type_id) 
-);
-
-
-CREATE TABLE orders( 
-order_id INT, 
-date DATE, 
-time TIME, 
-PRIMARY KEY (order_id) 
-);
-```
-
 ```sql
 -- CREATING INDEX 
 
 CREATE INDEX idx_pizza_type_category ON pizza_types(category);
 
-CREATE INDEX idx_pizza_type_id ON pizzas(pizza_type_id);
-
-CREATE INDEX idx_order_id ON order_details(order_id);
-
-CREATE INDEX idx_pizza_id ON order_details(pizza_id);
-
 CREATE INDEX idx_order_date ON orders(date);
-
-```
-
-```sql
-
--- RETRIEVE TOP 10 ROWS FROM EACH TABLE -- 
-
-SELECT pizza_type_id, name, category, ingredients FROM pizza_types LIMIT 10;
-
-SELECT order_id, date, time FROM orders LIMIT 10;
-
-SELECT pizza_id, pizza_type_id, size, price FROM pizzas LIMIT 10;
-
-SELECT order_details_id, order_id, pizza_id, quantity FROM order_details LIMIT 10;
-```
-
-
-```sql
--- RETRIEVE DISTINCT PIZZA NAMES -- 
-
-SELECT DISTINCT name FROM pizza_types;
-```
-
-```sql
--- RETRIEVE PIZZA CATEGORY -- 
-
-SELECT DISTINCT category FROM pizza_types;
-```
-
-
-```sql
--- RETRIEVE SIZES -- 
-
-SELECT DISTINCT size FROM pizzas;
 ```
 
 ```sql
 -- RETRIEVE TOTAL QUANTITY SOLD -- 
-
 SELECT SUM(quantity) AS total_quantity FROM order_details;
 ```
 
 
 ```sql
 -- RETRIEVE WHICH PIZZA SOLD MOST -- 
-
-
 SELECT pt.name, SUM(od.quantity) AS total_quantity
 FROM order_details od
 JOIN pizzas p ON od.pizza_id = p.pizza_id
@@ -141,7 +66,6 @@ LIMIT 1;
 
 ```sql
 -- RETRIEVE HOW MUCH EACH CATEGORY EARNS -- 
-
 WITH category_data AS (SELECT pt.category, p.pizza_id, p.price
 FROM pizza_types AS pt
 JOIN pizzas AS p ON pt.pizza_type_id = p.pizza_type_id)
@@ -152,135 +76,8 @@ JOIN order_details AS od ON cd.pizza_id = od.pizza_id
 GROUP BY cd.category
 ORDER BY revenue DESC;
 ```
-
-```sql
--- RETRIEVE MOST QUANTITY SALE DATE -- 
-
-SELECT date, SUM(od.quantity) AS total_quantity
-FROM orders AS o
-JOIN order_details AS od ON o.order_id = od.order_id
-GROUP BY o.date
-ORDER BY total_quantity DESC
-LIMIT 1;
-```
-
-```sql
--- RETRIEVE TOP 3 MOST EARNING MONTHS -- 
-
-WITH revenue_data AS (SELECT od.order_id, SUM(p.price * od.quantity) AS revenue
-FROM pizzas AS p
-JOIN order_details AS od ON p.pizza_id = od.pizza_id
-GROUP BY od.order_id)
-
-SELECT DATE_FORMAT(o.date, "%M") AS month, SUM(rd.revenue) AS revenue
-FROM orders AS o
-JOIN revenue_data AS rd ON o.order_id = rd.order_id
-GROUP BY month 
-ORDER BY revenue DESC
-LIMIT 3;
-```
-
-```sql
--- RETRIEVE TOP 5 MOST QUANTITY SOLD HOUR -- 
-
-SELECT HOUR(o.time) AS hour, SUM(od.quantity) AS total_quantity
-FROM orders AS o
-JOIN order_details AS od ON o.order_id = od.order_id
-GROUP BY hour
-ORDER BY total_quantity DESC
-LIMIT 5;
-```
-
-
-```sql
--- RETRIEVE WHICH SIZE DEMAND LESS -- 
-
-SELECT p.size, COUNT(od.order_details_id) AS total_order_count
-FROM pizzas AS p
-JOIN order_details AS od ON p.pizza_id = od.pizza_id
-GROUP BY p.size
-ORDER BY total_order_count
-LIMIT 1;
-```
-
-```sql
--- RETRIEVE MOST EXPENSIVE PIZZA -- 
-
-SELECT pt.name, p.price
-FROM pizza_types AS pt
-JOIN pizzas AS p ON pt.pizza_type_id = p.pizza_type_id
-ORDER BY p.price DESC
-LIMIT 1;
-```
-
-
-```sql
--- RETRIEVE AVERAGE NUMBER OF PIZZA SOLD PER DAY -- 
-
-SELECT ROUND(SUM(od.quantity) / COUNT(DISTINCT o.date)) AS Avg_pizza_sold_per_day
-FROM order_details od
-JOIN orders o ON od.order_id = o.order_id;
-```
-
-```sql
--- HOW MUCH EACH CATEGORY CONTRIBUTES TOWARDS REVENUE -- 
-
-WITH category_data AS (SELECT pt.category, p.pizza_id, p.price
-FROM pizza_types AS pt
-JOIN pizzas AS p ON pt.pizza_type_id = p.pizza_type_id)
-
-SELECT cd.category, CONCAT(ROUND((SUM(cd.price * od.quantity) / 
-                    (SELECT SUM(p.price * od.quantity) FROM pizzas AS p 
-                    JOIN order_details AS od ON p.pizza_id = od.pizza_id)) * 100), " ", "%") AS revenue_contribution
-FROM category_data AS cd
-JOIN order_details AS od ON cd.pizza_id = od.pizza_id
-GROUP BY cd.category
-ORDER BY revenue_contribution DESC;
-```
-
-
-```sql
--- RETRIEVE WEEKLY RUNNING TOTAL INCOME -- 
-
-WITH order_data AS (SELECT od.order_id, SUM(p.price * od.quantity) AS revenue
-FROM order_details AS od
-JOIN pizzas AS p ON od.pizza_id = p.pizza_id
-GROUP BY od.order_id),
-
-date_data AS (SELECT o.date, SUM(od.revenue) AS revenue
-FROM order_data AS od
-JOIN orders AS o ON od.order_id = o.order_id
-GROUP BY o.date) 
-
-SELECT date, revenue,
-       SUM(revenue) OVER(ORDER BY date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS running_weekly_income
-FROM date_data;
-```
-
-
-```sql
--- SELECT CUMULATIVE MONTHLY INCOME -- 
-
-WITH order_data AS (SELECT od.order_id, SUM(p.price * od.quantity) AS revenue
-FROM order_details AS od
-JOIN pizzas AS p ON od.pizza_id = p.pizza_id
-GROUP BY od.order_id),
-
-date_data AS (SELECT MONTH(o.date) AS month, SUM(od.revenue) AS revenue
-FROM order_data AS od
-JOIN orders AS o ON od.order_id = o.order_id
-GROUP BY month) 
-
-SELECT month, revenue,
-       SUM(revenue) OVER(ORDER BY month) AS cumulative_monthly_income
-FROM date_data;
-```
-
-
 ```sql
 -- RETRIEVE DIFFERENCE OF INCOME FROM PREVIOUS MONTH -- 
-
-
 WITH order_data AS (SELECT od.order_id, SUM(p.price * od.quantity) AS revenue
 FROM order_details AS od
 JOIN pizzas AS p ON od.pizza_id = p.pizza_id
@@ -295,16 +92,24 @@ SELECT month_name AS month, revenue,
       (revenue - LAG(revenue) OVER(ORDER BY month_number)) AS difference_in_income
 FROM date_data;
 ```
-
+  Download Queries : [PizzaHut Queries](https://github.com/Santosh96736/PizzaHut_Project/blob/main/PizzaHt_Queries_SQL.sql)
+  
 ## 5. KEY FINDINGS
-   *  **AVERAGE PIZZA SOLD PER DAY:** 138 pizza sold per day
-   *  **MOST DEMANDED PIZZA:** The Classic Deluxe Pizza
-   *  **PEAK SELLING HOUR:** Afternoon 12 o'clock
-   *  **LESS SELLING SIZE:** XXL size
-   *  **MOST EXPENSIVE PIZZA:** The Greek Pizza
-   *  **HIGHEST CONTRIBUTING CATEGORY:** Classic
+   *  **Average Daily Pizza Sales:** Approximately 138 pizzas sold per day, indicating steady customer demand.
+   *  **Best-Selling Pizza:** The Classic Deluxe Pizza leads in popularity and sales volume.
+   *  **Peak Sales Hour:** Highest sales occur at 12:00 PM (noon), highlighting the lunch-time rush.
+   *  **Lowest Demand Size:** The XXL size is the least popular among customers.
+   *  **Most Expensive Pizza:** The Greek Pizza commands the highest price point.
+   *  **Top Revenue-Generating Category:** The Classic pizza category contributes the most to overall revenue.
 
-## 6. REPOSITORY DETAILS
+## 6. RECOMMENDATIONS & SUGGESTIONS
+   * **Focus Marketing on Best Sellers:** Highlight the Classic Deluxe Pizza and other popular options in promotions and advertising campaigns to leverage their strong demand.
+   * **Optimize Peak Hour Sales:** Introduce targeted offers or combo deals during peak hours (around 12 PM) to increase order size and customer retention.
+   * **Upsell Premium Products:** Promote higher-priced pizzas like the Greek Pizza via upselling tactics during order placement and special occasion menus to increase average transaction value.
+   * **Expand Classic Category:** Develop new pizza varieties under the popular Classic category to capitalize on its strong revenue contribution and customer loyalty.
+   * **Implement Off-Peak Promotions:** Use discounts and bundle offers during non-peak hours to smooth demand throughout the day and increase overall sales volume.
+
+## 7. REPOSITORY DETAILS
 
 - **Repository Name:** PizzaHut Data Analysis  
 - **Description:** Analyzing PizzaHut sales data using MySQL to extract insights and optimize performance.  
