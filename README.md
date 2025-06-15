@@ -1,7 +1,5 @@
 # PizzaHut Data Analysis Using MySQL.
 
-![PizzaHut Logo](https://github.com/Santosh96736/PizzaHut_Project/blob/main/PizzaHut.png)
-
 ## TABLE OF CONTENTS 
 1. [PROJECT OVERVIEW](#1-PROJECT-OVERVIEW)
 2. [PROJECT OBJECTIVE](#2-PROJECT-OBJECTIVE)
