@@ -1,19 +1,21 @@
 # PizzaHut Data Analysis Using MySQL.
+* Pizza Hut is one of the world’s largest and most popular pizza chains, known for its wide variety of pizzas and strong global presence.  
+  This project analyzes a simulated dataset modeled on real-world operations to uncover key business insights using SQL.
 
 ## TABLE OF CONTENTS 
-1. [PROJECT OVERVIEW](#1-PROJECT-OVERVIEW)
-2. [PROJECT OBJECTIVE](#2-PROJECT-OBJECTIVE)
-3. [DATABASE SCHEMA](#3-DATABASE-SCHEMA)
-4. [SQL QUERIES](#4-SQL-QUERIES)
-5. [KEY FINDINGS](#5-KEY-FINDINGS)
+1. [PROJECT OVERVIEW](#1-Project-Overview)
+2. [PROJECT OBJECTIVE](#2-Project-Objective)
+3. [DATABASE SCHEMA](#3-Database-Schema)
+4. [SQL QUERIES](#4-Sql-Queries)
+5. [KEY FINDINGS](#5-Key-Findings)
 6. [RECOMMENDATIONS & SUGGESTIONS](#6-Recommendations-&-Suggestions)
-7. [REPOSITORY DETAILS](#7-REPOSITORY-DETAILS)
+7. [REPOSITORY DETAILS](#7-Repository-Details)
 
 
 ## 1. PROJECT OVERVIEW
   *   This project involves an in-depth analysis of PizzaHut's sales database using MySQL to extract valuable business insights,
       optimize performance, and understand customer preferences.  
-      Download the Dataset : [Pizza Place Sales](https://www.kaggle.com/datasets/mysarahmadbhat/pizza-place-sales?select=pizzas.csv)
+      Download the Dataset : [Pizza Place Sales On Kaggle](https://www.kaggle.com/datasets/mysarahmadbhat/pizza-place-sales?select=pizzas.csv)
 
 ## 2. PROJECT OBJECTIVE
   * **Create Database:** Design a structured relational database.
@@ -94,7 +96,7 @@ FROM date_data;
 ```
 ![Difference In Income](https://github.com/Santosh96736/PizzaHut_Project/blob/main/Screenshot%202025-06-15%20111847.png)
 
-  Download SQL Queries : [PizzaHut Queries](https://github.com/Santosh96736/PizzaHut_Project/blob/main/PizzaHt_Queries_SQL.sql)
+ Download SQL Queries : [PizzaHut Sql Queries](https://github.com/Santosh96736/PizzaHut_Project/blob/main/PizzaHt_Queries_SQL.sql)
   
   
 ## 5. KEY FINDINGS
