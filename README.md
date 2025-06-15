@@ -51,6 +51,7 @@ CREATE INDEX idx_order_date ON orders(date);
 -- RETRIEVE TOTAL QUANTITY SOLD -- 
 SELECT SUM(quantity) AS total_quantity FROM order_details;
 ```
+![Total Quantity Sold](https://github.com/Santosh96736/PizzaHut_Project/blob/main/Screenshot%202025-06-15%20112018.png)
 
 
 ```sql
@@ -63,6 +64,7 @@ GROUP BY pt.name
 ORDER BY total_quantity DESC
 LIMIT 1;
 ```
+![Best Selling Pizza](https://github.com/Santosh96736/PizzaHut_Project/blob/main/Screenshot%202025-06-15%20111950.png)
 
 ```sql
 -- RETRIEVE HOW MUCH EACH CATEGORY EARNS -- 
@@ -76,6 +78,8 @@ JOIN order_details AS od ON cd.pizza_id = od.pizza_id
 GROUP BY cd.category
 ORDER BY revenue DESC;
 ```
+![Category Wise Earning](https://github.com/Santosh96736/PizzaHut_Project/blob/main/Screenshot%202025-06-15%20111922.png)
+
 ```sql
 -- RETRIEVE DIFFERENCE OF INCOME FROM PREVIOUS MONTH -- 
 WITH order_data AS (SELECT od.order_id, SUM(p.price * od.quantity) AS revenue
@@ -92,6 +96,8 @@ SELECT month_name AS month, revenue,
       (revenue - LAG(revenue) OVER(ORDER BY month_number)) AS difference_in_income
 FROM date_data;
 ```
+![Difference In Income](https://github.com/Santosh96736/PizzaHut_Project/blob/main/Screenshot%202025-06-15%20111847.png)
+
   Download Queries : [PizzaHut Queries](https://github.com/Santosh96736/PizzaHut_Project/blob/main/PizzaHt_Queries_SQL.sql)
   
 ## 5. KEY FINDINGS
