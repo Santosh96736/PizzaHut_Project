@@ -2,14 +2,14 @@
 
 ![PizzaHut Logo](https://github.com/Santosh96736/PizzaHut_Project/blob/main/PizzaHut.png)
 
-## TABLE CONTENTS 
-1. [PROJECT OVERVIEW](#-PROJECT-OVERVIEW)
-2. [PROJECT OBJECTIVE](#-PROJECT-OBJECTIVE)
-3. [DATABASE SCHEMA](#-DATABASE-SCHEMA)
-4. [SQL QUERIES](#-SQL-QUERIES)
-5. [KEY FINDINGS](#-KEY-FINDINGS)
-6. [RECOMMENDATIONS & SUGGESTIONS](#-Recommendations-&-Suggestions)
-7. [REPOSITORY DETAILS](#-REPOSITORY-DETAILS)
+## TABLE OF CONTENTS 
+1. [PROJECT OVERVIEW](#1-PROJECT-OVERVIEW)
+2. [PROJECT OBJECTIVE](#2-PROJECT-OBJECTIVE)
+3. [DATABASE SCHEMA](#3-DATABASE-SCHEMA)
+4. [SQL QUERIES](#4-SQL-QUERIES)
+5. [KEY FINDINGS](#5-KEY-FINDINGS)
+6. [RECOMMENDATIONS & SUGGESTIONS](#6-Recommendations-&-Suggestions)
+7. [REPOSITORY DETAILS](#7-REPOSITORY-DETAILS)
 
 
 ## 1. PROJECT OVERVIEW
@@ -34,8 +34,6 @@
 > | **pizzas**       | `pizza_id`, `pizza_type_id`, `size`, `price` |
 > | **order_details**| `order_details_id`, `order_id`, `pizza_id`, `quantity` |
   Download the Schema : [PizzaHut Schema](https://github.com/Santosh96736/PizzaHut_Project/blob/main/PizzaHut_Schema_SQL.sql)
-
-
 
 
 ## 4. SQL QUERIES
@@ -98,7 +96,8 @@ FROM date_data;
 ```
 ![Difference In Income](https://github.com/Santosh96736/PizzaHut_Project/blob/main/Screenshot%202025-06-15%20111847.png)
 
-  Download Queries : [PizzaHut Queries](https://github.com/Santosh96736/PizzaHut_Project/blob/main/PizzaHt_Queries_SQL.sql)
+  Download SQL Queries : [PizzaHut Queries](https://github.com/Santosh96736/PizzaHut_Project/blob/main/PizzaHt_Queries_SQL.sql)
+  
   
 ## 5. KEY FINDINGS
    *  **Average Daily Pizza Sales:** Approximately 138 pizzas sold per day, indicating steady customer demand.
@@ -119,7 +118,7 @@ FROM date_data;
 
 - **Repository Name:** PizzaHut Data Analysis  
 - **Description:** Analyzing PizzaHut sales data using MySQL to extract insights and optimize performance.  
-- **LinkidIn:** [Santosh Kumar Sahu](https://www.linkedin.com/in/santosh-kumar-sahu-data-analyst)
+- **LinkedIn:** [Santosh Kumar Sahu](https://www.linkedin.com/in/santosh-kumar-sahu-data-analyst)
 - **Mail:** [santosh96736@gmail.com](santosh96736@gmail.com)
 - **GitHub Repository:** [PizzaHut_Project](https://github.com/Santosh96736/PizzaHut_Project)  
 
