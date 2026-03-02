@@ -1,14 +1,26 @@
-🔄 Project Evolution Notice
+# 🔄 Project Evolution Notice
 
 This repository contains the initial version of my PizzaHut MySQL analysis project.
-After further learning database normalization, indexing strategy, and query performance validation using EXPLAIN, I created an upgraded version with improved schema design and workload-driven indexing.
+
+After further learning about:
+
+Database normalization
+
+Constraint design (PK, FK, CHECK)
+
+Workload-driven indexing
+
+Query performance validation using EXPLAIN
+
+I developed an upgraded version with improved schema structure and optimized indexing strategy.
 
 👉 Updated Version: PizzaHut Sales Analysis – Optimized Schema & Performance Validation
 
-# PizzaHut Data Analysis Using MySQL.
-* Pizza Hut is one of the world’s largest and most popular pizza chains, known for its wide variety of pizzas and strong global presence.  
-  This project analyzes a simulated dataset modeled on real-world operations to uncover key business insights using SQL.
+# 🍕 PizzaHut Data Analysis Using MySQL (Version 1)
 
+This project analyzes a simulated PizzaHut sales dataset using MySQL to extract business insights and perform analytical queries.
+
+The focus of this version is SQL-based analytics and KPI generation.
 ## TABLE OF CONTENTS 
 1. [PROJECT OVERVIEW](#1-Project-Overview)
 2. [PROJECT OBJECTIVE](#2-Project-Objective)
