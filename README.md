@@ -14,7 +14,7 @@ Query performance validation using EXPLAIN
 
 I developed an upgraded version with improved schema structure and optimized indexing strategy.
 
-👉 Updated Version: PizzaHut Sales Analysis – Optimized Schema & Performance Validation
+👉 Updated Version: [PizzaHut Sales Analysis – Optimized Schema & Performance Validation](https://github.com/Santosh96736/pizzahut-sales-analysis-mysql)
 
 # 🍕 PizzaHut Data Analysis Using MySQL (Version 1)
 
